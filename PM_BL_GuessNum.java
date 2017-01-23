@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class PM_BL_GuessNum{
 	public static void main(String[] args){
 		runGame(startAndGetNum());
+		
 	}
 	public static int startAndGetNum(){
 		//TODO: for Brian -- please print the opening statement and return the number the user will be trying to guess
@@ -10,9 +11,10 @@ public class PM_BL_GuessNum{
 	public static void runGame(int num){
 		Scanner sc = new Scanner(System.in);
 		int counter = 0;
-		String single = "try!!!";
-		String moreThanSingle = "tries!!!";
-		while(true){
+		String single = " try!!!";
+		String moreThanSingle = " tries!!!";
+		boolean done = true;
+		while(done){
 			int guess = sc.nextInt();
 			counter++;
 			if(guess==num){
@@ -20,7 +22,7 @@ public class PM_BL_GuessNum{
 					System.out.println("You got it in " + counter + single);
 				else
 					System.out.println("You got it in " + counter + moreThanSingle);
-				System.exit(1); //or playing = false;
+				done = !done;
 			}
 			else if(guess>num){
 				System.out.println("Too high!!");
@@ -29,5 +31,10 @@ public class PM_BL_GuessNum{
 				System.out.println("Too low!");
 			}
 		}
+		System.out.println("Play again? y/n ");
+		if(sc.next().equals("y")){
+			main(new String[1]);
+		}
+		sc.close();
 	}
 }
