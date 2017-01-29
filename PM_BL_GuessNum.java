@@ -2,12 +2,15 @@ import java.util.Scanner;
 public class PM_BL_GuessNum{
 	public static void main(String[] args){
 		runGame(startAndGetNum());
-		
+
 	}
+
 	public static int startAndGetNum(){
-		//TODO: for Brian -- please print the opening statement and return the number the user will be trying to guess
-		return 9; //for testing purposes (to make sure my part compiles);
+		System.out.println("I have a number between 1 and 100.");
+  	System.out.println("Can you guess my number?");
+		return 1 + (int) Math.random() * 100;
 	}
+
 	public static void runGame(int num){
 		Scanner sc = new Scanner(System.in);
 		int counter = 0;
