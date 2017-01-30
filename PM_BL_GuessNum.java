@@ -8,7 +8,7 @@ public class PM_BL_GuessNum{
 	public static int startAndGetNum(){
 		System.out.println("I have a number between 1 and 100.");
 		System.out.println("Can you guess my number?");
-		return 1 + (int) Math.random() * 100;
+		return 1 + (int) (Math.random() * 100);
 	}
 
 	public static void runGame(int num){
